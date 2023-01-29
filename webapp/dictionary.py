@@ -4,6 +4,7 @@ import justpy as jp
 class Dictionary:
     path = "/dictionary"
 
+    @classmethod
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
         mainDiv = jp.Div(a=wp, classes="bg-gray-00 h-screen")
