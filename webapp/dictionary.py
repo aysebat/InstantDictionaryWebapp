@@ -6,7 +6,7 @@ class Dictionary:
 
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
-        mainDiv = jp.Div(a=wp, classes="bg-gray-200 h-screen")
+        mainDiv = jp.Div(a=wp, classes="bg-gray-00 h-screen")
         jp.Div(a=mainDiv,
                text="Instant English Dictionary",
                classes="text-4xl m-2")
@@ -15,8 +15,11 @@ class Dictionary:
                clases="text-lg")
         jp.Input(a=mainDiv,
                  placeholder="Type in any word here...",
-                 classes="m-2 bg-gray-200 border-2 border-gray-200 rounded w-64 "
-                         "focus:outline-none focus:border-purple-500 py-2 px-4")
+                 classes="m-2 bg-gray-100 border-2 border-gray-200 rounded w-64 "
+                         "focus:outline-none focus:border-purple-500 focus:bg-white "
+                         "py-2 px-4")
+        jp.Div(a=mainDiv,
+               classes="m-2 p-2 text-lg border-2 h-40 ")
         return wp
 
 
