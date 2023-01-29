@@ -1,11 +1,12 @@
 import justpy as jp
 
+
 class About:
-    path= "/about"
+    path = "/about"
 
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
-        #main Div
+        # main Div
         mainDiv = jp.Div(a=wp, classes="bg-gay-200 h-screen")
 
         jp.Div(a=mainDiv,
@@ -27,6 +28,5 @@ class About:
                classes="text-lg")
         return wp
 
-jp.Route(About.path, About.serve)
-jp.justpy(port=8001)
-        
+
+
