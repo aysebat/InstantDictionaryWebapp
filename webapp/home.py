@@ -5,19 +5,14 @@ class Home:
     path = "/"
 
      @classmethod
-    def serve(self):
+    def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
         layout = jp.QLayout(a=wp, view="hHh lpR fFf")
         header = jp.QHeader(a=layout,
                             classses="bg-primary text-white")
         toolbar = jp.QToolbar(a=header)
-        jp.QBtn(a=toolbar,
-                dense=True,
-                flat=True,
-                round=True,
-                icon="menu",
-                click=cls.move_draver, drawer=drawer
-                )
+
+
         jp.QToolbarTitle(a=toolbar,
                          text="Instant Dictionary")
 
@@ -26,7 +21,12 @@ class Home:
                             side="left",
                             bordered=True)
 
-
+        jp.QBtn(a=toolbar,
+                dense=True,
+                flat=True,
+                round=True,
+                icon="menu",
+                click=cls.move_draver, drawer=drawer)
 
 
         mainDiv = jp.Div(a=wp, classes="bg-gray-200 h-screen")
@@ -35,6 +35,9 @@ class Home:
         return wp
 @staticmethod
 def move_draver(wigdet, msg):
-    pass
+    if widget.drawer.value:
+        widget.drawer.value = False
+    else:
+        widget.drawer.value = True
 
 
