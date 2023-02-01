@@ -16,8 +16,15 @@ class Home:
                 flat=True,
                 round=True,
                 icon="menu",
-                click=cls.move_draver, draver=draver
+                click=cls.move_draver, drawer=drawer
                 )
+        jp.QToolbarTitle(a=toolbar,
+                         text="Instant Dictionary")
+
+        drawer = jp.QDrawer(show_if_above=True,
+                            v_model="leftDrawerOpen",
+                            side="left",
+                            bordered=True)
 
 
 
