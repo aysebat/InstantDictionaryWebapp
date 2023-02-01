@@ -7,7 +7,7 @@ class Dictionary:
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
-        mainDiv = jp.Div(a=wp, classes="bg-gray-00 h-screen font-mono")
+        mainDiv = jp.Div(a=wp, classes="bg-gray-100 h-screen font-mono")
         jp.Div(a=mainDiv,
                text="Instant English Dictionary",
                classes="text-4xl m-2 ")
@@ -16,7 +16,7 @@ class Dictionary:
                clases="text-lg m-2")
         #input div
         inputDiv = jp.Div(a=mainDiv, classes="grid grid-cols-2 my-4")
-        inputBox = jp.Input(a=inputDiv,
+        input_box = jp.Input(a=inputDiv,
                             placeholder="Type in any word here...",
                             classes="m-2 bg-gray-100 border-2 border-gray-200 rounded w-64 "
                                     "focus:outline-none focus:border-purple-500 focus:bg-white "
@@ -24,12 +24,7 @@ class Dictionary:
 
         outputDiv = jp.Div(a=mainDiv,
                            classes="m-2 p-2 text-lg border-2 h-40 ")
-        jp.Button(a=inputDiv,
-                  text="GetDefinition",
-                  classes="border-2 text-gray-s500",
-                  click=cls.get_definition, output=outputDiv, input=inputBox)
-                  #you can use output and input variable in get_definition method
-        ############# ,
+
 
         print(cls, req)
         return wp
@@ -38,8 +33,7 @@ class Dictionary:
     def get_definition(widget, msg):
         """widget is the button
            msg is contain the data about the event"""
-
         #defined = definition.Definition(widget.input.value).get()
-        #widget.output.text = widget.input.value
+        widget.output.text = widget.input.value
 
 
