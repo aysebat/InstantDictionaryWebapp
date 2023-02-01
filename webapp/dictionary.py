@@ -44,9 +44,11 @@ class Dictionary:
         """widget is the button
            msg is contain the data about the event"""
 
+        defined = definition.Definition(widget.value).get()
+        widget.output.text = defined
 
         #this can be used for teh button elemnt
         # defined = definition.Definition(widget.input.value).get()
-        # widget.output.text = defined
+
 
 
