@@ -1,4 +1,5 @@
 import justpy as jp
+import layout
 
 
 class About:
@@ -6,8 +7,9 @@ class About:
 
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
-        # main Div
-        mainDiv = jp.Div(a=wp, classes="bg-gay-200 h-screen")
+        web_layout = layout.DefaultLayout(a=wp, view="hHh lpR fFf")
+        container = jp.QPageContainer(a=web_layout)
+        mainDiv = jp.Div(a=container, classes="bg-gay-200 h-screen")
 
         jp.Div(a=mainDiv,
                text="This is the about page",
@@ -27,6 +29,3 @@ class About:
                     versions of Lorem Ipsum""",
                classes="text-lg")
         return wp
-
-
-
