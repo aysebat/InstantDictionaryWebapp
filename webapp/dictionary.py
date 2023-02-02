@@ -8,7 +8,27 @@ class Dictionary:
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
-        mainDiv = jp.Div(a=wp, classes="bg-gray-100 h-screen font-mono")
+        layout = jp.QLayout(a=wp, view="hHh lpR fFf")
+        header = jp.QHeader(a=layout,
+                            classses="bg-primary text-white font-mono")
+        toolbar = jp.QToolbar(a=header)
+
+        drawer = jp.QDrawer(a=layout,
+                            show_if_above=True,
+                            v_model="leftDrawerOpen",
+                            side="left",
+                            bordered=True)
+        jp.QBtn(a=toolbar,
+                flat=True,
+                dense=True,
+                round=True,
+                icon="menu",
+                click=cls.move_drawer,
+                drawer=drawer)
+        jp.QToolbarTitle(a=toolbar,
+                         text="Instant Dictionary")
+        container = jp.QPageContainer(a=layout)
+        mainDiv = jp.Div(a=container, classes="bg-gray-100 h-screen font-mono")
         jp.Div(a=mainDiv,
                text="Instant English Dictionary",
                classes="text-4xl m-2 ")
@@ -51,3 +71,10 @@ class Dictionary:
 
         # this can be used for teh button elemnt
         # defined = definition.Definition(widget.input.value).get()
+
+    @staticmethod
+    def move_drawer(widget, msg):
+        if widget.drawer.value:
+            widget.drawer.value = False
+        else:
+            widget.drawer.value = True
