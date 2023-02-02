@@ -13,7 +13,7 @@ class About:
 
         jp.Div(a=mainDiv,
                text="This is the about page",
-               classes="text-4xl ")
+               classes="text-4xl mx-4")
 
         jp.Div(a=mainDiv,
                text="""Lorem Ipsum is simply dummy text of the printing and
@@ -27,5 +27,5 @@ class About:
                    Lorem Ipsum passages, and more recently with desktop
                     publishing software like Aldus PageMaker including 
                     versions of Lorem Ipsum""",
-               classes="text-lg")
+               classes="text-lg m-4")
         return wp

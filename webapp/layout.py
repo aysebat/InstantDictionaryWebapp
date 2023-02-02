@@ -16,7 +16,9 @@ class DefaultLayout(jp.QLayout):
                             v_model="leftDrawerOpen",
                             side="left",
                             bordered=True)
-        scroller = jp.QScrollArea(a=drawer, classes="fit")
+
+        scroller = jp.QScrollArea(a=drawer,
+                                  classes="fit bg-gray-200 h-screen font-mono")
         qlist = jp.QList(a=scroller)
         a_classes = 'p-2 n-2 text-lg text-blue-400 hover:text-blue-700'
         jp.A(a=qlist, text="Home", href="/", classes=a_classes)
