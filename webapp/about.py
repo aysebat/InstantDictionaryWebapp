@@ -1,5 +1,5 @@
 import justpy as jp
-import layout
+from webapp import layout
 
 
 class About:
@@ -9,11 +9,11 @@ class About:
         wp = jp.QuasarPage(tailwind=True)
         web_layout = layout.DefaultLayout(a=wp, view="hHh lpR fFf")
         container = jp.QPageContainer(a=web_layout)
-        mainDiv = jp.Div(a=container, classes="bg-gay-200 h-screen")
+        mainDiv = jp.Div(a=container, classes="bg-gray-100 h-screen font-mono")
 
         jp.Div(a=mainDiv,
                text="This is the about page",
-               classes="text-4xl m-2")
+               classes="text-4xl ")
 
         jp.Div(a=mainDiv,
                text="""Lorem Ipsum is simply dummy text of the printing and

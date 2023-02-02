@@ -1,6 +1,6 @@
 import justpy as jp
 import definition
-import layout
+from webapp import layout
 
 
 class Dictionary:
@@ -14,7 +14,7 @@ class Dictionary:
         mainDiv = jp.Div(a=container, classes="bg-gray-100 h-screen font-mono")
         jp.Div(a=mainDiv,
                text="Instant English Dictionary",
-               classes="text-4xl m-2 ")
+               classes="text-4xl ")
         jp.Div(a=mainDiv,
                text="Get the definition of any English word instantly as you type...",
                clases="text-lg m-2")
