@@ -29,7 +29,7 @@ class Dictionary:
                                      "py-2 px-4 font-mono",
                              output_div=outputDiv)
 
-        # when someone write on the input box
+        # when someone write on the input box hat shows instatntly
         input_box.on('input', cls.get_definition)
 
         # jp.Button(a=inputDiv,

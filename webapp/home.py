@@ -14,7 +14,8 @@ class Home:
                          classes="bg-gray-100 h-screen font-mono")
 
         jp.Div(a=mainDiv,
-               text="This is the Home Page")
+               text="This is the Home Page",
+               classes="text-4xl mx-4")
         return wp
 
 

@@ -1,12 +1,14 @@
 import justpy as jp
+
+
 class DefaultLayout(jp.QLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        #This is the self(layout) we are goint to use that
-        #when we initialize the class
-        #layout = jp.QLayout(a=wp, view="hHh lpR fFf")
+        # This is the self(layout) we are goint to use that
+        # when we initialize the class
+        # layout = jp.QLayout(a=wp, view="hHh lpR fFf")
         header = jp.QHeader(a=self,
                             classses="bg-primary text-white font-mono")
         toolbar = jp.QToolbar(a=header)
@@ -23,9 +25,9 @@ class DefaultLayout(jp.QLayout):
         a_classes = 'p-2 n-2 text-lg text-blue-400 hover:text-blue-700'
         jp.A(a=qlist, text="Home", href="/", classes=a_classes)
         jp.Br(a=qlist)
-        jp.A(a=qlist, text="About", href="/about" , classes=a_classes)
+        jp.A(a=qlist, text="About", href="/about", classes=a_classes)
         jp.Br(a=qlist)
-        jp.A(a=qlist, text="Dictionary", href="\dictionary" , classes=a_classes)
+        jp.A(a=qlist, text="Dictionary", href="\dictionary", classes=a_classes)
         jp.Br(a=qlist)
 
         jp.QBtn(a=toolbar,
