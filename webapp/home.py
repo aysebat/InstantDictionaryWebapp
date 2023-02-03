@@ -7,8 +7,7 @@ class Home:
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
-        web_layout = layout.DefaultLayout(a=wp,
-                                          view="hHh lpR fFf")
+        web_layout = layout.DefaultLayout(a=wp)
         container = jp.QPageContainer(a=web_layout)
         mainDiv = jp.Div(a=container,
                          classes="bg-gray-100 h-screen font-mono")
