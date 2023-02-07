@@ -51,13 +51,15 @@ class Dictionary(page.Page):
            msg is contain the data about the event"""
 
         #defined = definition.Definition(widget.value).get()
+        #defined = definition.Definition(widget.input.value).get()
 
         req = requests.get(f"http://local:8000/api?w={widget.value}")
-        widget.output_div.text = " ".join(defined)
+        data = req.json()
+        widget.output_div.text = " ".join(data["definitoion"])
 
 
-        # this can be used for teh button element
-        # defined = definition.Definition(widget.input.value).get()
+
+
 
     @staticmethod
     def move_drawer(widget, msg):
