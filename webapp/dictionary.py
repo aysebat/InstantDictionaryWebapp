@@ -3,6 +3,7 @@ import definition
 from webapp import layout
 from webapp import page
 
+import requests
 class Dictionary(page.Page):
     path = "/dictionary"
 
@@ -49,10 +50,13 @@ class Dictionary(page.Page):
         """widget is the button
            msg is contain the data about the event"""
 
-        defined = definition.Definition(widget.value).get()
+        #defined = definition.Definition(widget.value).get()
+
+        req = requests.get(f"http://local:8000/api?w={widget.value}")
         widget.output_div.text = " ".join(defined)
 
-        # this can be used for teh button elemnt
+
+        # this can be used for teh button element
         # defined = definition.Definition(widget.input.value).get()
 
     @staticmethod
